@@ -9,9 +9,10 @@
     <version>0.1</version>
 
     <properties>
-        <sonar.projectKey>cs2901-2020-2_lab4</sonar.projectKey>
+        <sonar.projectKey>cs2901-2020-2_lab4-requerimientos-funcionales-THEFLILUX</sonar.projectKey>
         <sonar.organization>cs2901-2020-2</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.login>534bf8518ca6c89b2c9f582863e6071c0c7cdead</sonar.login>
     </properties>
 
     <dependencies>
