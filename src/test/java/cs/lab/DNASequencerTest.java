@@ -7,15 +7,21 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.TooManyListenersException;
 
 @Test
 public class DNASequencerTest {
 
-    public void testCase0() throws IOException {
+    public void testCase0() throws IOException, Exception {
         generic(0);
     }
 
-    private void generic(int i) throws IOException {
+    @Test(expectedExceptions = TooManyListenersException.class)
+    public void testTooManyLines() throws IOException, Exception {
+        generic(1);
+    }
+
+    private void generic(int i) throws IOException, Exception{
         List<String> input = readInput(i);
         String output = readOutput(i);
         DNASequencer sequencer = new DNASequencer();
