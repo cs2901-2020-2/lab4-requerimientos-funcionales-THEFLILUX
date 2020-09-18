@@ -21,16 +21,16 @@ public class  DNASequencer {
         if(part.size() > 160000){
             throw new QuantitySequenceException("Muchas subsequencias");
         } else{
-            StringBuilder Dna = new StringBuilder(part.get(0));
+            StringBuilder dna = new StringBuilder(part.get(0));
             int limit=0;
 
             for(int i=0;i<part.get(2).length();i++){
-                for(int j=0;j<Dna.length();j++){
+                for(int j=0;j<dna.length();j++){
                     if(limit == 2){
-                        Dna.append(part.get(2).charAt(i));
+                        dna.append(part.get(2).charAt(i));
                         break;
                     } else{
-                        if(part.get(2).charAt(i)==Dna.charAt(j)){
+                        if(part.get(2).charAt(i)==dna.charAt(j)){
                             limit=0;
                             break;
                         }
@@ -38,12 +38,12 @@ public class  DNASequencer {
                     }
                 }
                 if(limit==1){
-                    Dna.append(part.get(2).charAt(i));
+                    dna.append(part.get(2).charAt(i));
                     limit=2;
                 }
             }
 
-            return Dna.toString();
+            return dna.toString();
         }
     }
 }
