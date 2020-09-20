@@ -22,27 +22,18 @@ public class  DNASequencer {
             throw new QuantitySequenceException("Muchas subsequencias");
         } else{
             StringBuilder dna = new StringBuilder(part.get(0));
-            int limit=0;
 
-            for(int i=0;i<part.get(2).length();i++){
-                for(int j=0;j<dna.length();j++){
-                    if(limit == 2){
-                        dna.append(part.get(2).charAt(i));
-                        break;
-                    } else{
-                        if(part.get(2).charAt(i)==dna.charAt(j)){
-                            limit=0;
-                            break;
-                        }
-                        limit=1;
+            for (int i = 1; i < part.size(); i++) {
+                StringBuilder aux = new StringBuilder();
+
+                for (int j = 0; j < part.get(i).length(); j++){
+                    aux.append(part.get(i).charAt(j));
+
+                    if(!(dna.toString()).contains(aux)){
+                        dna.append(part.get(i).charAt(j));
                     }
                 }
-                if(limit==1){
-                    dna.append(part.get(2).charAt(i));
-                    limit=2;
-                }
             }
-
             return dna.toString();
         }
     }
